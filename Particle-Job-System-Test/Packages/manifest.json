@@ -2,9 +2,9 @@
   "dependencies": {
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
-    "com.unity.ide.vscode": "1.2.0",
+    "com.unity.ide.vscode": "1.2.1",
     "com.unity.jobs": "0.2.9-preview.15",
-    "com.unity.test-framework": "1.1.13",
+    "com.unity.test-framework": "1.1.14",
     "com.unity.textmeshpro": "2.0.1",
     "com.unity.timeline": "1.2.14",
     "com.unity.ugui": "1.0.0",
@@ -40,11 +40,5 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  },
-  "lock": {
-    "com.vladfaust.unitywakatime": {
-      "revision": "package",
-      "hash": "b8a1d9f726608a3517fade7d045c7c629a57c302"
-    }
   }
 }

@@ -21,8 +21,10 @@ using Unity.Burst;
 
 public class Testing : MonoBehaviour {
 
+    public int numZombies = 1000;
     [SerializeField] private bool useJobs;
     [SerializeField] private Transform pfZombie;
+    [SerializeField] private Transform parent;
     private List<Zombie> zombieList;
 
     public class Zombie {
@@ -32,8 +34,8 @@ public class Testing : MonoBehaviour {
 
     private void Start() {
         zombieList = new List<Zombie>();
-        for (int i = 0; i < 1000; i++) {
-            Transform zombieTransform = Instantiate(pfZombie, new Vector3(UnityEngine.Random.Range(-8f, 8f), UnityEngine.Random.Range(-5f, 5f)), Quaternion.identity);
+        for (int i = 0; i < numZombies; i++) {
+            Transform zombieTransform = Instantiate(pfZombie, new Vector3(UnityEngine.Random.Range(-8f, 8f), UnityEngine.Random.Range(-5f, 5f)), Quaternion.identity, parent);
             zombieList.Add(new Zombie {
                 transform = zombieTransform,
                 moveY = UnityEngine.Random.Range(1f, 2f)
@@ -90,7 +92,7 @@ public class Testing : MonoBehaviour {
                     zombie.moveY = +math.abs(zombie.moveY);
                 }
                 float value = 0f;
-                for (int i = 0; i < 1000; i++) {
+                for (int i = 0; i < numZombies; i++) {
                     value = math.exp10(math.sqrt(value));
                 }
             }
@@ -111,7 +113,7 @@ public class Testing : MonoBehaviour {
         }
         */
 
-        //Debug.Log(((Time.realtimeSinceStartup - startTime) * 1000f) + "ms");
+        Debug.Log(((Time.realtimeSinceStartup - startTime) * 1000f) + "ms");
     }
 
     private void ReallyToughTask() {
@@ -157,7 +159,7 @@ public struct ReallyToughParallelJob : IJobParallelFor {
             moveYArray[index] = +math.abs(moveYArray[index]);
         }
         float value = 0f;
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < positionArray.Length; i++) {
             value = math.exp10(math.sqrt(value));
         }
     }
@@ -180,7 +182,7 @@ public struct ReallyToughParallelJobTransforms : IJobParallelForTransform {
         }
 
         float value = 0f;
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < moveYArray.Length; i++) {
             value = math.exp10(math.sqrt(value));
         }
     }
