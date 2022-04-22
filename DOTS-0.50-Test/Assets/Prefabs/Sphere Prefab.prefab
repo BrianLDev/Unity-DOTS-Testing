@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7690367427058367536}
   - component: {fileID: 7690367427058367537}
   - component: {fileID: 7690367427058367538}
+  - component: {fileID: -2584471913736261891}
+  - component: {fileID: 1705082249759994769}
   m_Layer: 0
   m_Name: Sphere Prefab
   m_TagString: Untagged
@@ -95,3 +97,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
+--- !u!114 &-2584471913736261891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690367427058367539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3e8a35e1d894d7b81fd0b16c445ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Value: 3
+--- !u!114 &1705082249759994769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7690367427058367539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d92a6d1d5fbb4f92bf7c84fc05923fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 5
+  xOffset: 0.25
+  yOffset: 0.25
