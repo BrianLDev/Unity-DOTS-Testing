@@ -2,18 +2,17 @@ using Unity.Entities;
 using Unity.Transforms;
 using Unity.Mathematics;
 using Unity.Jobs;
-using UnityEngine;
 
 // CURRENT MULTI-THREADED VERSION (SystemBase)
 public partial class WaveSystem : SystemBase
 {
   protected override void OnUpdate()
   {
-    float elapsedTime = (float)Time.ElapsedTime;
+    float elapsedTime = (float)Time.ElapsedTime;  // time is a dynamic variable and must be established outside the job and passed in
     Entities.ForEach((ref Translation trans, in MoveSpeedData moveSpeed, in WaveData waveData) => 
     {
-      float zPos = waveData.amplitude * math.sin( 
-        elapsedTime * moveSpeed.Value + trans.Value.x * waveData.xOffset + trans.Value.y * waveData.yOffset);
+      float zPos = waveData.amplitude * math.sin(elapsedTime * moveSpeed.Value + trans.Value.x * waveData.xOffset + 
+        trans.Value.y * waveData.yOffset);
       trans.Value = new float3(trans.Value.x, trans.Value.y, zPos);
     }).ScheduleParallel();
   }
@@ -32,24 +31,8 @@ If there are any dependencies, put the jobHandle in the parens.
 Note that synch points (job handle.complete(), other job dependancy and entity command buffers) can force the execution on main thread to finish the work.
 */
 
-// OLD, DEPRECATED MULTI-THREADED VERSION (JobComponentSystem)
-// public class WaveSystem : JobComponentSystem
-// {
-//   protected override JobHandle OnUpdate(JobHandle inputDependencies)
-//   {
-//     float elapsedTime = (float)Time.ElapsedTime;
-//     JobHandle jobHandle = Entities.ForEach((ref Translation trans, in MoveSpeedData moveSpeed, in WaveData waveData) => 
-//     {
-//       float zPos = waveData.amplitude * math.sin( 
-//         elapsedTime * moveSpeed.Value + trans.Value.x * waveData.xOffset + trans.Value.y * waveData.yOffset);
-//       trans.Value = new float3(trans.Value.x, trans.Value.y, zPos);
-//     }).Schedule(inputDependencies);
 
-//     return jobHandle;
-//   }
-// }
-
-// SINGLE THREADED VERSION
+// ALTERNATE SINGLE THREADED VERSION
 // public class WaveSystem : ComponentSystem
 // {
 //   protected override void OnUpdate()
@@ -60,5 +43,23 @@ Note that synch points (job handle.complete(), other job dependancy and entity c
 //         (float)Time.ElapsedTime * moveSpeed.Value + trans.Value.x * waveData.xOffset + trans.Value.y * waveData.yOffset);
 //       trans.Value = new float3(trans.Value.x, trans.Value.y, zPos);
 //     });
+//   }
+// }
+
+
+// OLD, DEPRECATED MULTI-THREADED VERSION (JobComponentSystem)
+// public class WaveSystem : JobComponentSystem
+// {
+//   protected override JobHandle OnUpdate(JobHandle inputDependencies)
+//   {
+//     float elapsedTime = (float)Time.ElapsedTime;  // time is a dynamic variable and must be established outside the job and passed in
+//     JobHandle jobHandle = Entities.ForEach((ref Translation trans, in MoveSpeedData moveSpeed, in WaveData waveData) => 
+//     {
+//       float zPos = waveData.amplitude * math.sin( 
+//         elapsedTime * moveSpeed.Value + trans.Value.x * waveData.xOffset + trans.Value.y * waveData.yOffset);
+//       trans.Value = new float3(trans.Value.x, trans.Value.y, zPos);
+//     }).Schedule(inputDependencies);
+
+//     return jobHandle;
 //   }
 // }
