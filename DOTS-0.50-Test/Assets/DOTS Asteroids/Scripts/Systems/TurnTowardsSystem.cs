@@ -9,7 +9,9 @@ public partial class TurnTowardsSystem : SystemBase
   {
     float deltaTime = Time.DeltaTime;
 
-    Entities.ForEach((ref Rotation rot, in MoveData moveData) =>
+    Entities.
+      WithAll<PlayerTag>().
+      ForEach((ref Rotation rot, in MoveData moveData) =>
     {
       if (!moveData.direction.Equals(float3.zero))
       {

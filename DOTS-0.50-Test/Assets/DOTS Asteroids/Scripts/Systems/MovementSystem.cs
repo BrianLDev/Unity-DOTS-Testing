@@ -2,7 +2,7 @@ using UnityEngine;
 using Unity.Entities;
 using Unity.Transforms;
 
-public partial class PlayerMovementSystem : SystemBase
+public partial class MovementSystem : SystemBase
 {
 protected override void OnUpdate()
   {
