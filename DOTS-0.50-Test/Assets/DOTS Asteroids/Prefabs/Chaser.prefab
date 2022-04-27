@@ -101,7 +101,7 @@ MonoBehaviour:
     y: 0
     z: 0
   speed: 9
-  turnSpeed: 4
+  turnSpeed: 3
 --- !u!114 &1380833064321587088
 MonoBehaviour:
   m_ObjectHideFlags: 0

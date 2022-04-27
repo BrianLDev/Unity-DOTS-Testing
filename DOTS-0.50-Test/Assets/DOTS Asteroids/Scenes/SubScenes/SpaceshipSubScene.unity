@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587100, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: turnSpeed
-      value: 3
+      value: 3.63
       objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587100, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: direction.x
@@ -231,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587100, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: turnSpeed
-      value: 3
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587100, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: direction.x
@@ -322,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587100, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: turnSpeed
-      value: 3
+      value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587100, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: direction.x
@@ -409,11 +409,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587100, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: speed
-      value: 4.35
+      value: 5.48
       objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587100, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: turnSpeed
-      value: 3
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587100, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: direction.x
@@ -566,12 +566,8 @@ PrefabInstance:
       value: Chaser
       objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587100, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
-      propertyPath: speed
-      value: 9.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 1380833064321587100, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: turnSpeed
-      value: 3
+      value: 3.39
       objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587103, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: m_RootOrder
