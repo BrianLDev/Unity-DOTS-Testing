@@ -160,7 +160,7 @@ MonoBehaviour:
     x: 0
     y: 0
     z: 0
-  speed: 9
+  speed: 10
   turnSpeed: 8
 --- !u!114 &1010390145505967317
 MonoBehaviour:

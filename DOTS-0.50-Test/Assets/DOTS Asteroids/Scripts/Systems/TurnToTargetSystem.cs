@@ -5,6 +5,7 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
 
+[UpdateAfter(typeof(TransformSystemGroup))] // makes sure this runs after everything in TransformSystemGroup (which is later in loop)
 public partial class TurnToTargetSystem : SystemBase
 {
     protected override void OnUpdate()

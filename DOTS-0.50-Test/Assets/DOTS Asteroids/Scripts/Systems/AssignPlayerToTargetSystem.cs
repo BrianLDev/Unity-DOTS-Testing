@@ -1,7 +1,8 @@
 using UnityEngine;
 using Unity.Entities;
 
-// This system assigns the Player as the target for all Chasers
+// [UpdateInGroup(typeof(InitializationSystemGroup))]  // this forces the system to run earlier with the Initialization groups
+[UpdateBefore(typeof(TurnToTargetSystem))]  // makes sure this script is run before TurnToTargetSystem
 public partial class AssignPlayerToTargetSystem : SystemBase
 {
   // Note - we only want this script to run once, so we run the code in OnStartRunning() instead of OnUpdate()
@@ -17,16 +18,15 @@ public partial class AssignPlayerToTargetSystem : SystemBase
 
     // Note - use .GetSingletonEntity if we just want to get 1 entity
     Entity playerEntity = playerQuery.GetSingletonEntity();
-    Debug.Log("Player entity: " + playerEntity);
 
     Entities.
       WithAll<ChaserTag>().
       ForEach((ref TargetData targetData) =>
       {
-        // if (playerEntity != Entity.Null)  // Entities need to check against Entity.Null instead of regular null
-        // {
+        if (playerEntity != Entity.Null)  // Entities need to check against Entity.Null instead of regular null
+        {
           targetData.targetEntity = playerEntity;
-        // }
+        }
       }).Run();
   }
 
