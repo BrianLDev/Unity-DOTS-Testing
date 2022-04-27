@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_48882336:
-        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -59,8 +59,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2469407: 3
+    - Vector1_2469407: 0.9
     - Vector1_6DC2C68C: 0.05
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -80,8 +92,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_19C6C157: {r: 0.65882355, g: 0.6251558, b: 0.29019606, a: 0}
-    - Color_A6B409B2: {r: 0.23255596, g: 0.5680848, b: 0.735849, a: 0.9490196}
-    - Color_E448CF9F: {r: 23.968628, g: 8.784314, b: 0, a: 0.98039216}
+    - Color_A6B409B2: {r: 0.14578143, g: 0.26874, b: 0.7924528, a: 0.9490196}
+    - Color_E448CF9F: {r: 0.16874301, g: 2.8942926, b: 11.924528, a: 0.98039216}
     - Vector2_6925FF1E: {r: 1, g: 0.05, b: 0, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
