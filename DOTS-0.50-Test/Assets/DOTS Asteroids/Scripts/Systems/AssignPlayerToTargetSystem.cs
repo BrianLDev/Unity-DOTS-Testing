@@ -1,11 +1,13 @@
+using UnityEngine;
 using Unity.Entities;
 
-// This script assigns the Player as the target for all Chasers
-// Note - not very efficient since it does it on every single update, but this is just for practice not for a real game
+// This system assigns the Player as the target for all Chasers
 public partial class AssignPlayerToTargetSystem : SystemBase
 {
-  protected override void OnUpdate()
+  // Note - we only want this script to run once, so we run the code in OnStartRunning() instead of OnUpdate()
+  protected override void OnStartRunning()
   {
+    base.OnStartRunning();
     // Note - To get the playerEntity and data, create an EntityQuery using GetEntityQuery to gather entities that match certain criteria
     // EntityQuery playerQuery = GetEntityQuery(typeof(PlayerTag));
     EntityQuery playerQuery = GetEntityQuery(ComponentType.ReadOnly<PlayerTag>());  // readonly version of the above line (slightly faster)
@@ -15,15 +17,21 @@ public partial class AssignPlayerToTargetSystem : SystemBase
 
     // Note - use .GetSingletonEntity if we just want to get 1 entity
     Entity playerEntity = playerQuery.GetSingletonEntity();
+    Debug.Log("Player entity: " + playerEntity);
 
     Entities.
       WithAll<ChaserTag>().
       ForEach((ref TargetData targetData) =>
       {
-        if (playerEntity != Entity.Null)  // Entities need to check against Entity.Null instead of regular null
-        {
+        // if (playerEntity != Entity.Null)  // Entities need to check against Entity.Null instead of regular null
+        // {
           targetData.targetEntity = playerEntity;
-        }
-      }).ScheduleParallel();
+        // }
+      }).Run();
+  }
+
+  protected override void OnUpdate()
+  {
+    // OnUpdate() is required for all systems but in this case it isn't needed so we just leave it blank
   }
 }
