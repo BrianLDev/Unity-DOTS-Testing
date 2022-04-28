@@ -9,10 +9,21 @@ protected override void OnUpdate()
   {
     float deltaTime = Time.DeltaTime;
 
-    Entities.ForEach((ref Translation pos, in MoveData moveData, in Rotation rot) => 
-    {
-      float3 forwardDirection = math.forward(rot.Value);
-      pos.Value += forwardDirection * moveData.speed * deltaTime;
-    }).ScheduleParallel();
+    // Player and chasers (thruster movement)
+    Entities.
+      WithAny<PlayerTag, ChaserTag>().
+      ForEach((ref Translation pos, in MoveData moveData, in Rotation rot) => 
+      {
+        float3 forwardDirection = math.forward(rot.Value);
+        pos.Value += forwardDirection * moveData.speed * deltaTime;
+      }).ScheduleParallel();
+
+    // Asteroids (constant movement)
+    Entities.
+      WithAll<AsteroidTag>().
+      ForEach((ref Translation pos, in MoveData moveData) =>
+      {
+        pos.Value += moveData.moveDirection * moveData.speed * deltaTime;
+      }).ScheduleParallel();
   }
 }

@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 299852432333549256, guid: b78305524b844455f8357cd1c366bf8b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 299852432333549256, guid: b78305524b844455f8357cd1c366bf8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -177,6 +177,14 @@ PrefabInstance:
     - target: {fileID: 1108618462906250354, guid: b78305524b844455f8357cd1c366bf8b, type: 3}
       propertyPath: m_Name
       value: Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258714111236837839, guid: b78305524b844455f8357cd1c366bf8b, type: 3}
+      propertyPath: spinRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258714111236837839, guid: b78305524b844455f8357cd1c366bf8b, type: 3}
+      propertyPath: spinRotation.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b78305524b844455f8357cd1c366bf8b, type: 3}

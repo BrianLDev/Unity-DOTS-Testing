@@ -20,10 +20,10 @@ public partial class TurnToTargetSystem : SystemBase
         ComponentDataFromEntity<Translation> allTranslations = GetComponentDataFromEntity<Translation>(true); // true == readOnly
           Translation targetPos = allTranslations[targetData.targetEntity];
           float3 dirToTarget = targetPos.Value - pos.Value;
-          moveData.direction = dirToTarget;
-          if (!moveData.direction.Equals(float3.zero))
+          moveData.moveDirection = dirToTarget;
+          if (!moveData.moveDirection.Equals(float3.zero))
           {
-            quaternion targetRotation = quaternion.LookRotationSafe(moveData.direction, math.back());
+            quaternion targetRotation = quaternion.LookRotationSafe(moveData.moveDirection, math.back());
             rot.Value = math.slerp(rot.Value, targetRotation, moveData.turnSpeed * deltaTime);
           }
         }).ScheduleParallel(); 

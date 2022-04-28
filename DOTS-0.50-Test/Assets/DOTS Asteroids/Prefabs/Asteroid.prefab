@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4543788801382057937}
   - component: {fileID: 488763108}
+  - component: {fileID: 1837125403502717647}
   - component: {fileID: 1563175295}
   m_Layer: 0
   m_Name: Asteroid
@@ -45,12 +46,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156089702ad53484eb37b30f608bbc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction:
-    x: 0.6
-    y: 0.3
+  moveDirection:
+    x: 1
+    y: -1
     z: 0
   speed: 1
-  turnSpeed: 1
+  turnSpeed: 0
+--- !u!114 &1837125403502717647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4543788801382057942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa52877158534684b222793c98d55bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinRotation:
+    x: 1
+    y: 0
+    z: 0
 --- !u!114 &1563175295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +105,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4543788802238330106}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

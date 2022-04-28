@@ -10,12 +10,12 @@ protected override void OnUpdate()
     Entities.ForEach((ref MoveData moveData, in InputData inputData) => 
     {
       // Input to float3 - My version
-      moveData.direction = float3.zero;
-      moveData.direction += math.up() * Convert.ToInt32(Input.GetKey(inputData.upKey));
-      moveData.direction += math.down() * Convert.ToInt32(Input.GetKey(inputData.downKey));
-      moveData.direction += math.right() * Convert.ToInt32(Input.GetKey(inputData.rightKey));
-      moveData.direction += math.left() * Convert.ToInt32(Input.GetKey(inputData.leftKey));
-      moveData.direction = math.normalizesafe(moveData.direction);
+      moveData.moveDirection = float3.zero;
+      moveData.moveDirection += math.up() * Convert.ToInt32(Input.GetKey(inputData.upKey));
+      moveData.moveDirection += math.down() * Convert.ToInt32(Input.GetKey(inputData.downKey));
+      moveData.moveDirection += math.right() * Convert.ToInt32(Input.GetKey(inputData.rightKey));
+      moveData.moveDirection += math.left() * Convert.ToInt32(Input.GetKey(inputData.leftKey));
+      moveData.moveDirection = math.normalizesafe(moveData.moveDirection);
 
       // Input to float3 - Wilmer's version
       // bool isUpKeyPressed = Input.GetKey(inputData.upKey);
