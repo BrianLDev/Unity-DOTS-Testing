@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4543788801382057937}
   - component: {fileID: 488763108}
-  - component: {fileID: 1837125403502717647}
+  - component: {fileID: 8442519466427344908}
   - component: {fileID: 1563175295}
   m_Layer: 0
   m_Name: Asteroid
@@ -52,7 +52,7 @@ MonoBehaviour:
     z: 0
   speed: 1
   turnSpeed: 0
---- !u!114 &1837125403502717647
+--- !u!114 &8442519466427344908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinRotation:
-    x: 1
+    x: 0
     y: 0
     z: 0
 --- !u!114 &1563175295

@@ -2,10 +2,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
 
-[UpdateBefore(typeof(MovementSystem))]
-[UpdateBefore(typeof(TurnToTargetSystem))]
-[UpdateBefore(typeof(TurnToRotationSystem))]
-[UpdateBefore(typeof(SpinnerSystem))]
+[UpdateInGroup(typeof(InitializationSystemGroup))]
 public partial class AsteroidSpawnerSystem : SystemBase
 {
   protected override void OnStartRunning()
@@ -14,6 +11,7 @@ public partial class AsteroidSpawnerSystem : SystemBase
     uint seed = 654321;
     Random rand = new Random(seed);
     float3 screenDimensions = new float3(35, 20, 0);
+
     Entities.
       WithAll<AsteroidTag>().
       ForEach((ref Translation pos, ref NonUniformScale scale, ref MoveData moveData, ref SpinnerData spinnerData) =>
@@ -23,8 +21,9 @@ public partial class AsteroidSpawnerSystem : SystemBase
         moveData.speed = rand.NextFloat();
         moveData.moveDirection = rand.NextFloat3Direction();
         moveData.moveDirection.z = 0;
-        spinnerData.spinRotation = rand.NextFloat3Direction();
-      }).ScheduleParallel();
+        // spinnerData.spinRotation = rand.NextFloat3Direction();
+        spinnerData.spinRotation.z = (rand.NextFloat()-0.5f);
+      }).Run();
   }
 
   protected override void OnUpdate()

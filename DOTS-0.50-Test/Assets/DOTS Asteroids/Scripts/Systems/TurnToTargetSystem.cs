@@ -26,6 +26,8 @@ public partial class TurnToTargetSystem : SystemBase
             quaternion targetRotation = quaternion.LookRotationSafe(moveData.moveDirection, math.back());
             rot.Value = math.slerp(rot.Value, targetRotation, moveData.turnSpeed * deltaTime);
           }
-        }).ScheduleParallel(); 
+        }).ScheduleParallel();
+      
+      Dependency.Complete();
     }
 }
