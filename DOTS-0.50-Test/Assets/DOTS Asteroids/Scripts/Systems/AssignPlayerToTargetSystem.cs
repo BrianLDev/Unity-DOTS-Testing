@@ -1,8 +1,8 @@
 using UnityEngine;
 using Unity.Entities;
 
-// [UpdateInGroup(typeof(InitializationSystemGroup))]  // this forces the system to run earlier with the Initialization groups
-[UpdateBefore(typeof(TurnToTargetSystem))]  // makes sure this script is run before TurnToTargetSystem
+// [UpdateInGroup(typeof(InitializationSystemGroup))]  // makes sure system is run early w/ Initialization groups (could cause conflicts)
+[UpdateBefore(typeof(TurnToTargetSystem))]  // makes sure this system is run before TurnToTargetSystem
 public partial class AssignPlayerToTargetSystem : SystemBase
 {
   // Note - we only want this script to run once, so we run the code in OnStartRunning() instead of OnUpdate()
@@ -27,7 +27,7 @@ public partial class AssignPlayerToTargetSystem : SystemBase
         {
           targetData.targetEntity = playerEntity;
         }
-      }).Run();
+      }).ScheduleParallel();
   }
 
   protected override void OnUpdate()
