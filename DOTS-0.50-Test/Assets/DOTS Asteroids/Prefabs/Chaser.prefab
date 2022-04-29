@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 1380833064321587102}
   - component: {fileID: 1380833064321587101}
   - component: {fileID: 1380833064321587100}
-  - component: {fileID: 1380833064321587088}
   - component: {fileID: 1380833064360233898}
+  - component: {fileID: 389668780200593136}
+  - component: {fileID: 1380833064321587088}
   m_Layer: 0
   m_Name: Chaser
   m_TagString: Untagged
@@ -102,18 +103,6 @@ MonoBehaviour:
     z: 0
   speed: 9
   turnSpeed: 3
---- !u!114 &1380833064321587088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380833064321587099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e97a7c9e256d4d51bf0473606c1dad2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1380833064360233898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,3 +116,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetEntity: {fileID: 0}
+--- !u!114 &389668780200593136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380833064321587099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b91dcb9afb9484ac8873927fad4b45a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  isDead: 0
+--- !u!114 &1380833064321587088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380833064321587099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e97a7c9e256d4d51bf0473606c1dad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
