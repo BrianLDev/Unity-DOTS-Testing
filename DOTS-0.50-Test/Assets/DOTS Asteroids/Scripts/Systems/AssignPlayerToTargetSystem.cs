@@ -1,7 +1,6 @@
 using UnityEngine;
 using Unity.Entities;
 
-// [UpdateInGroup(typeof(InitializationSystemGroup))]  // makes sure system is run early w/ Initialization groups (could cause conflicts)
 [UpdateBefore(typeof(TurnToTargetSystem))]  // makes sure this system is run before TurnToTargetSystem
 public partial class AssignPlayerToTargetSystem : SystemBase
 {
@@ -28,6 +27,8 @@ public partial class AssignPlayerToTargetSystem : SystemBase
           targetData.targetEntity = playerEntity;
         }
       }).ScheduleParallel();
+
+    this.Dependency.Complete();
   }
 
   protected override void OnUpdate()
