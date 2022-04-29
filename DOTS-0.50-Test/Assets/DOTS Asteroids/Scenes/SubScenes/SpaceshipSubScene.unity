@@ -242,7 +242,7 @@ MonoBehaviour:
     m_Template: {fileID: 0}
     m_CollisionResponse:
       m_Override: 0
-      m_Value: 3
+      m_Value: 1
     m_Friction:
       m_Override: 0
       m_Value:
@@ -399,7 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91dcb9afb9484ac8873927fad4b45a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 200
+  damageCaused: 200
   isDead: 0
 --- !u!23 &1601441397571979279
 MeshRenderer:

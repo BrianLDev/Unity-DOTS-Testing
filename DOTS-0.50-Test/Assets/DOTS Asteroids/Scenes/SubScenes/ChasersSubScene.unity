@@ -474,10 +474,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chaser
       objectReference: {fileID: 0}
-    - target: {fileID: 1380833064321587099, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1380833064321587103, guid: 86e7d415ee00c4a619a969cc7144b05f, type: 3}
       propertyPath: m_RootOrder
       value: 0
