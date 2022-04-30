@@ -24,7 +24,7 @@ public partial class AsteroidSpawnerSystem : SystemBase
         physicsVelocity.Linear = rand.NextFloat3Direction()-0.5f;
         physicsVelocity.Linear.z = 0;
         physicsVelocity.Angular = rand.NextFloat3Direction()-0.5f;
-        physicsMass.InverseMass = 1/(scale.Value.c0.x * 50);
+        physicsMass.InverseMass = 1/(1/physicsMass.InverseMass * scale.Value.c0.x);
       }).ScheduleParallel();
 
     this.Dependency.Complete();

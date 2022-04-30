@@ -2,6 +2,8 @@ using Unity.Entities;
 using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
+using Unity.Physics;
+using Unity.Physics.Extensions;
 
 public partial class TurnToTargetSystem : SystemBase
 {
@@ -11,7 +13,7 @@ public partial class TurnToTargetSystem : SystemBase
     
     Entities.
       WithAll<ChaserTag>().
-      ForEach((ref Rotation rot, ref MoveData moveData, in Translation pos, in TargetData targetData) => 
+      ForEach((ref Rotation rot, ref MoveData moveData, ref PhysicsVelocity physicsVelocity, in Translation pos, in TargetData targetData, in PhysicsMass physicsMass) => 
       {
         if (targetData.targetEntity.Equals(Entity.Null))
           return;
@@ -26,6 +28,7 @@ public partial class TurnToTargetSystem : SystemBase
           {
             quaternion targetRotation = quaternion.LookRotationSafe(moveData.moveDirection, math.back());
             rot.Value = math.slerp(rot.Value, targetRotation, moveData.turnSpeed * deltaTime);
+            physicsVelocity.SetAngularVelocityWorldSpace(physicsMass, rot, float3.zero);
           }
         }
       }).ScheduleParallel();

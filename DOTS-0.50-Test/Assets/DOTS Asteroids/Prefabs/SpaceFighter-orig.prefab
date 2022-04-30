@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8436086398747831401}
   - component: {fileID: 2751266755016233104}
   m_Layer: 0
-  m_Name: SpaceFighter
+  m_Name: SpaceFighter-orig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
