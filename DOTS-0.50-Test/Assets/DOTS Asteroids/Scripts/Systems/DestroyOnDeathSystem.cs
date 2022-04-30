@@ -1,5 +1,4 @@
 using Unity.Entities;
-using Unity.Transforms;
 using Unity.Physics.Systems;
 
 [UpdateInGroup(typeof(FixedStepSimulationSystemGroup))]
@@ -19,10 +18,10 @@ public partial class DestroyOnDeathSystem : SystemBase
     EntityCommandBuffer ecb = commandBufferSystem.CreateCommandBuffer();
 
     Entities.
-      WithAny<ChaserTag, AsteroidTag>().
+      WithAny<PlayerTag, ChaserTag, AsteroidTag>().
       ForEach((Entity entity, in HealthData healthData) =>
     {
-      if (healthData.isDead && entity != Entity.Null)
+      if (healthData.isDead && !entity.Equals(Entity.Null))
       {
         ecb.DestroyEntity(entity);
       }

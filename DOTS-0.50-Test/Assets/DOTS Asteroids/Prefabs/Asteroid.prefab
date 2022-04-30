@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  damageCaused: 50
+  damageCaused: 25
   isDead: 0
 --- !u!114 &1563175295
 MonoBehaviour:

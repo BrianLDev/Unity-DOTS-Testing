@@ -19,6 +19,15 @@ public partial class DamageOnCollisionSystem : SystemBase
 
   protected override void OnUpdate()
   {
+    // reduce invulnerable timers
+    float deltaTime = Time.DeltaTime;
+    Entities.ForEach((ref HealthData healthData) => 
+    {
+      if (healthData.invulnerableTimer > 0)
+        healthData.invulnerableTimer -= deltaTime; 
+    }).ScheduleParallel();
+
+    // Damage On Collision Job
     Dependency = new DamageOnCollisionSystemJob
     {
       healthGroup = GetComponentDataFromEntity<HealthData>()
@@ -39,17 +48,26 @@ public partial class DamageOnCollisionSystem : SystemBase
 
       if (healthGroup.HasComponent(entityA) && healthGroup.HasComponent(entityB)) 
       {
-        // make a copy of data, modify it, then copy back
-        HealthData healthA = healthGroup[entityA];
-        HealthData healthB = healthGroup[entityB];
-        healthA.health -= healthB.damageCaused;
-        healthB.health -= healthA.damageCaused;
-        if (healthA.health <= 0)
-          healthA.isDead = true;
-        if (healthB.health <= 0)
-          healthB.isDead = true;
-        healthGroup[entityA] = healthA;
-        healthGroup[entityB] = healthB;
+        if (healthGroup[entityA].invulnerableTimer > 0 || healthGroup[entityB].invulnerableTimer > 0)
+          return;
+        else
+        {
+          // make a copy of data, modify it, then copy back
+          HealthData healthA = healthGroup[entityA];
+          HealthData healthB = healthGroup[entityB];
+          healthA.health -= healthB.damageCaused;
+          healthB.health -= healthA.damageCaused;
+          if (healthA.health <= 0)
+            healthA.isDead = true;
+          else
+            healthA.invulnerableTimer = 0.5f;
+          if (healthB.health <= 0)
+            healthB.isDead = true;
+          else
+            healthB.invulnerableTimer = 0.5f;
+          healthGroup[entityA] = healthA;
+          healthGroup[entityB] = healthB;
+        }
       }
     }
   }
