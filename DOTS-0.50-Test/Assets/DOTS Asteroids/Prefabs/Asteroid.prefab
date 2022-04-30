@@ -53,25 +53,25 @@ MonoBehaviour:
     y: 0.43728513
     z: 0.04431033
   m_PrimitiveSize:
-    x: 2.1271887
-    y: 1.1899688
-    z: 1.615873
+    x: 0.9
+    y: 0.9
+    z: 1.87
   m_PrimitiveOrientation:
     Value:
       x: -0
-      y: 0
-      z: 0
+      y: 90
+      z: 90
     RotationOrder: 4
   m_Capsule:
-    Height: 1.615873
-    Radius: 1.0635943
+    Height: 1.87
+    Radius: 0.45
     Axis: 2
   m_Cylinder:
-    Height: 1.615873
-    Radius: 1.0635943
+    Height: 1.87
+    Radius: 0.45
     Axis: 2
   m_CylinderSideCount: 20
-  m_SphereRadius: 1.0635943
+  m_SphereRadius: 0.935
   m_MinimumSkinnedVertexWeight: 0.1
   m_ConvexHullGenerationParameters:
     m_SimplificationTolerance: 0.03190783
@@ -84,7 +84,7 @@ MonoBehaviour:
     m_Template: {fileID: 0}
     m_CollisionResponse:
       m_Override: 0
-      m_Value: 1
+      m_Value: 0
     m_Friction:
       m_Override: 0
       m_Value:

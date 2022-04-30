@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1380833064321587103}
   - component: {fileID: 1380833064321587102}
   - component: {fileID: 1380833064321587101}
-  - component: {fileID: 1380833064321587100}
   - component: {fileID: 1380833064360233898}
   - component: {fileID: 389668780200593136}
   - component: {fileID: 7764303782508946364}
@@ -33,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1380833064321587099}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -2.89, y: -2.44, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -87,24 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1380833064321587100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380833064321587099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 156089702ad53484eb37b30f608bbc31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirection:
-    x: 0
-    y: 0
-    z: 0
-  speed: 9
-  turnSpeed: 3
 --- !u!114 &1380833064360233898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccea9ea98e38942e0b0938c27ed1903e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MotionType: 1
+  m_MotionType: 0
   m_Smoothing: 0
   m_Mass: 1
   m_LinearDamping: 0.01
@@ -158,7 +139,7 @@ MonoBehaviour:
     x: 0
     y: 0
     z: 0
-  m_GravityFactor: 1
+  m_GravityFactor: 0
   m_OverrideDefaultMassDistribution: 0
   m_CenterOfMass:
     x: 0
@@ -196,15 +177,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b275e5f92732148048d7b77e264ac30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShapeType: 31
+  m_ShapeType: 2
   m_PrimitiveCenter:
     x: 0
-    y: -0.029848382
-    z: -0.09475601
+    y: 0
+    z: -0.4
   m_PrimitiveSize:
-    x: 2.383358
-    y: 0.34034222
-    z: 2.1972334
+    x: 1.5
+    y: 1.5
+    z: 1.5
   m_PrimitiveOrientation:
     Value:
       x: -0
@@ -212,15 +193,15 @@ MonoBehaviour:
       z: 0
     RotationOrder: 4
   m_Capsule:
-    Height: 2.1972334
-    Radius: 1.191679
+    Height: 1.5
+    Radius: 0.75
     Axis: 2
   m_Cylinder:
-    Height: 2.1972334
-    Radius: 1.191679
+    Height: 1.5
+    Radius: 0.75
     Axis: 2
   m_CylinderSideCount: 20
-  m_SphereRadius: 1.191679
+  m_SphereRadius: 0.75
   m_MinimumSkinnedVertexWeight: 0.1
   m_ConvexHullGenerationParameters:
     m_SimplificationTolerance: 0.03575037
@@ -233,7 +214,7 @@ MonoBehaviour:
     m_Template: {fileID: 0}
     m_CollisionResponse:
       m_Override: 0
-      m_Value: 1
+      m_Value: 0
     m_Friction:
       m_Override: 0
       m_Value:
