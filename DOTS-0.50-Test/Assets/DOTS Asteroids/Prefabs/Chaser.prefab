@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1380833064321587102}
   - component: {fileID: 1380833064321587101}
   - component: {fileID: 1380833064360233898}
+  - component: {fileID: 7649106565845220687}
   - component: {fileID: 389668780200593136}
   - component: {fileID: 7764303782508946364}
   - component: {fileID: 1707135381554859684}
@@ -99,6 +100,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetEntity: {fileID: 0}
+--- !u!114 &7649106565845220687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380833064321587099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156089702ad53484eb37b30f608bbc31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirection:
+    x: 0
+    y: 0
+    z: 0
+  speed: 0
+  turnSpeed: 0
 --- !u!114 &389668780200593136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MotionType: 0
   m_Smoothing: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDamping: 0.01
   m_AngularDamping: 0.05
   m_InitialLinearVelocity:
